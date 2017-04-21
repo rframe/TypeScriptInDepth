@@ -1,19 +1,23 @@
 /**
  * Created by russell.frame on 4/21/2017.
  */
-function GetAllBooks() {
-    let books = [
-        {title: 'Ulysses', author: 'James Joyce', available: true},
-        {title: 'A Farewell to Arms', author: 'Ernest Hemingway', available: false},
-        {title: 'I Know Why the Caged Bird Sings', author: 'Maya Angelou', available: true},
+
+class Book {
+    constructor(public title: string, public author: string, public available: boolean){}
+}
+function GetAllBooks(): Array<Book> {
+    let books: Array<Book> = [
+        new Book('Ulysses', 'James Joyce', true),
+        new Book('A Farewell to Arms', 'Ernest Hemingway', false),
+        new Book('I Know Why the Caged Bird Sings', 'Maya Angelou', true)
     ];
     return books;
 }
 
-function LogFirstAvailable(books) {
-    let numberOfBooks = books.length;
+function LogFirstAvailable(books: Array<Book>): void {
+    let numberOfBooks: number = books.length;
+    let firstAvailable: string;
 
-    let firstAvailable = '';
     for(let currentBook of books) {
         if(currentBook.available) {
             firstAvailable = currentBook.title;
@@ -25,5 +29,7 @@ function LogFirstAvailable(books) {
     console.log(`First Available: ${firstAvailable}`)
 }
 
-const allBooks = GetAllBooks();
-LogFirstAvailable(allBooks)
+let allBooks: Array<Book> = GetAllBooks();
+
+allBooks.push(new Book('I Know Why the Caged Bird Sings', 'Maya Angelou', true));
+LogFirstAvailable(allBooks);
