@@ -66,7 +66,7 @@ function CreateCustomerId(name: string, id: number): string {
 let x: number;
 x = 5;
 
-let IdGenerator: (chars: string, nums: number) => string;
+let IdGenerator: (chars: string, num: number) => string;
 //IdGenerator = CreateCustomerId;
 IdGenerator = (name: string, id: number) => {return `${name}${id}`;}
 
