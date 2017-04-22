@@ -1,17 +1,23 @@
 /**
  * Created by russell.frame on 4/21/2017.
  */
+import {Category} from './enum';
+import {Book} from './interfaces';
 
-class Book {
-    constructor(public id: number, public title: string, public author: string, public available: boolean, public categrory: Category) {
-    }
-}
+// class Book {
+//     constructor(public id: number, public title: string, public author: string, public available: boolean, public categrory: Category) {
+//     }
+// }
 function GetAllBooks(): Array<Book> {
-    let books: Array<Book> = [
-        new Book(1, 'Ulysses', 'James Joyce', true, Category.Fiction),
-        new Book(2, 'A Farewell to Arms', 'Ernest Hemingway', false, Category.Fiction),
-        new Book(3, 'I Know Why the Caged Bird Sings', 'Maya Angelou', true, Category.Poetry),
-        new Book(4, 'Moby Dick', 'Herman Melville', true, Category.Fiction)
+    let books = [
+        {id: 1, title:'Ulysses', author: 'James Joyce', available: true, category:Category.Fiction},
+        {id: 2, title:'A Farewell to Arms', author: 'Ernest Hemingway', available: false, category:Category.Fiction},
+        {id: 3, title:'I Know Why the Caged Bird Sings', author: 'Maya Angelou', available: true, category:Category.Poetry},
+        {id: 4, title:'Moby Dick', author: 'Herman Melville', available: true, category:Category.Fiction},
+        // new Book(1, 'Ulysses', 'James Joyce', true, Category.Fiction),
+        // new Book(2, 'A Farewell to Arms', 'Ernest Hemingway', false, Category.Fiction),
+        // new Book(3, 'I Know Why the Caged Bird Sings', 'Maya Angelou', true, Category.Poetry),
+        // new Book(4, 'Moby Dick', 'Herman Melville', true, Category.Fiction)
     ];
     return books;
 }
@@ -31,7 +37,6 @@ function LogFirstAvailable(books: Array<Book> = GetAllBooks()): void {
     console.log(`First Available: ${firstAvailable}`)
 }
 
-enum Category {Biography, Poetry, Fiction, History, Children};
 
 function GetBookTitlesByCategory(categoryFilter: Category = Category.Fiction): Array<string> {
     console.log(`Getting books in categroy: ${Category[categoryFilter]}`);
@@ -40,7 +45,7 @@ function GetBookTitlesByCategory(categoryFilter: Category = Category.Fiction): A
     const filteredTitles: Array<string> = [];
 
     for(let currentBook of allBooks) {
-        if(currentBook.categrory === categoryFilter) {
+        if(currentBook.category === categoryFilter) {
             filteredTitles.push(currentBook.title);
         }
     }
@@ -104,6 +109,10 @@ function GetTitles(bookProperty: any): string[] {
     }
     return foundTitles;
 }
+
+function PrintBook(book: Book) {
+    console.log(`${book.title} by ${book.author}`);
+}
 /******************************/
 //const allBooks: Array<Book> = GetAllBooks();
 //LogFirstAvailable(allBooks);
@@ -154,7 +163,22 @@ function GetTitles(bookProperty: any): string[] {
 // let hermansBooks = GetTitles('Herman Melville');
 // hermansBooks.forEach(x => console.log(x));
 
+ //let checkoutBooks = GetTitles(false);
 
-// let checkoutBooks = GetTitles(false);
-// checkoutBooks.forEach(x => console.log(x));
+ //checkoutBooks.forEach(x => console.log(x));
 /******************************/
+
+let myBook: Book = {
+    id: 5,
+    title: 'Pride and Prejudice',
+    author: 'Jane Austen',
+    available: true,
+    category: Category.Fiction,
+    pages: 251,
+    markDamaged: (reason: string) => console.log(`Damaged: ${reason}`);
+    //year: '1813',
+    //copies: 3
+};
+
+PrintBook(myBook);
+myBook.markDamaged('Missing Back Cover');
