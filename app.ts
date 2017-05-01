@@ -209,12 +209,14 @@ function PrintBook(book: Book) {
 // Extending Classes
 // If parent object constructor exporct parameters and child object does not have a constructor pass the parameters for the parent object to the child object
 //let refBook = new Encyclopedia('Worldpedia', 1900);
-let refBook = new Encyclopedia('Worldpedia', 1900, 10);
-refBook.printItem();
+// let refBook = new Encyclopedia('Worldpedia', 1900, 10);
+// refBook.printItem();
 /******************************/
 
 /******************************/
 // Creating Abstract Classes
+let refBook: ReferenceItem = new Encyclopedia('Worldpedia', 1900, 10);
+refBook.printCitation();
 /******************************/
 
 /******************************/

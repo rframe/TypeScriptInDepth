@@ -9,7 +9,7 @@ export class UniversityLibrarian implements Librarian {
     }
 }
 
-export class ReferenceItem {
+export abstract class ReferenceItem {
     private _publisher: string;
     static department: string = 'Research';
     constructor(public title: string, protected year: number) {
@@ -28,16 +28,21 @@ export class ReferenceItem {
         console.log(`${this.title} was published in ${this.year}`);
         console.log(`Department: ${ReferenceItem.department}`);
     }
+
+    abstract printCitation(): void;
 }
 
 export class Encyclopedia extends ReferenceItem {
     constructor(title: string, year: number, public edition: number) {
         super(title, year);
-        console.log(year);
     }
 
     printItem(): void {
         super.printItem();
         console.log(`Edition: ${this.edition} (${this.year})`);
+    }
+
+    printCitation(): void {
+        console.log(`${this.title} - ${this.year}`);
     }
 }
