@@ -2,7 +2,7 @@
  * Created by russell.frame on 4/21/2017.
  */
 import {Category} from './enum';
-import {Book} from './interfaces';
+import {Book, DamageLogger} from './interfaces';
 
 // class Book {
 //     constructor(public id: number, public title: string, public author: string, public available: boolean, public categrory: Category) {
@@ -175,10 +175,14 @@ let myBook: Book = {
     available: true,
     category: Category.Fiction,
     pages: 251,
-    markDamaged: (reason: string) => console.log(`Damaged: ${reason}`);
+    markDamaged: (reason: string) => console.log(`Damaged: ${reason}`)
     //year: '1813',
     //copies: 3
 };
 
 PrintBook(myBook);
 myBook.markDamaged('Missing Back Cover');
+
+let logDamage: DamageLogger;
+logDamage = (damage: string) => console.log(`Damage reported: ${damage}`);
+logDamage(`Coffee Stains`);
