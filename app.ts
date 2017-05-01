@@ -192,19 +192,19 @@ function PrintBook(book: Book) {
 /******************************/
 
 /******************************/
-let favoriteAuthor: Author = {
-    email: '',
-    name: '',
-    numBooksPublished: null
-}
+// let favoriteAuthor: Author = {
+//     email: '',
+//     name: '',
+//     numBooksPublished: null
+// }
 
-let favoriteLibrarian: Librarian = {
-    assistCustomer: null,
-    department: '',
-    email: '',
-    name: '',
+// let favoriteLibrarian: Librarian = {
+//     assistCustomer: null,
+//     department: '',
+//     email: '',
+//     name: '',
 
-}
+// }
 /******************************/
 
 /******************************/
