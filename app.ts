@@ -215,12 +215,38 @@ function PrintBook(book: Book) {
 
 /******************************/
 // Creating Abstract Classes
-let refBook: ReferenceItem = new Encyclopedia('Worldpedia', 1900, 10);
-refBook.printCitation();
+// let refBook: ReferenceItem = new Encyclopedia('Worldpedia', 1900, 10);
+// refBook.printCitation();
 /******************************/
 
 /******************************/
-// Useing Class Expressions
+// Using Class Expressions
+let Newspaper = class extends ReferenceItem {
+    printCitation(): void {
+        console.log(`Newspaper: ${this.title}`);
+    }
+}
+
+let myPaper = new Newspaper('The Gazette', 2016);
+myPaper.printCitation();
+
+class Novel extends class {title: string} {
+    mainCharacter: string;
+}
+
+let favoriteNovel = new Novel();
+favoriteNovel.mainCharacter = '';
+favoriteNovel.title = '';
+
+
+// class Novel extends class extends class {a: string} {title: string} {
+//     mainCharacter: string;
+// }
+
+// let favoriteNovel = new Novel();
+// favoriteNovel.mainCharacter = '';
+// favoriteNovel.title = '';
+// favoriteNovel.a = '';
 /******************************/
 
 /******************************/
