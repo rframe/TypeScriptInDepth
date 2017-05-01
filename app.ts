@@ -3,7 +3,7 @@
  */
 import {Category} from './enum';
 import {Book, DamageLogger, Author, Librarian} from './interfaces';
-
+import {UniversityLibrarian} from './classes';
 // class Book {
 //     constructor(public id: number, public title: string, public author: string, public available: boolean, public categrory: Category) {
 //     }
@@ -192,19 +192,9 @@ function PrintBook(book: Book) {
 /******************************/
 
 /******************************/
-// let favoriteAuthor: Author = {
-//     email: '',
-//     name: '',
-//     numBooksPublished: null
-// }
-
-// let favoriteLibrarian: Librarian = {
-//     assistCustomer: null,
-//     department: '',
-//     email: '',
-//     name: '',
-
-// }
+let favoriteLibrarian: Librarian = new UniversityLibrarian();
+favoriteLibrarian.name = 'Sharon';
+favoriteLibrarian.assistCustomer('Lynda');
 /******************************/
 
 /******************************/
