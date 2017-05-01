@@ -2,7 +2,7 @@
  * Created by russell.frame on 4/21/2017.
  */
 import {Category} from './enum';
-import {Book, DamageLogger} from './interfaces';
+import {Book, DamageLogger, Author, Librarian} from './interfaces';
 
 // class Book {
 //     constructor(public id: number, public title: string, public author: string, public available: boolean, public categrory: Category) {
@@ -168,21 +168,53 @@ function PrintBook(book: Book) {
  //checkoutBooks.forEach(x => console.log(x));
 /******************************/
 
-let myBook: Book = {
-    id: 5,
-    title: 'Pride and Prejudice',
-    author: 'Jane Austen',
-    available: true,
-    category: Category.Fiction,
-    pages: 251,
-    markDamaged: (reason: string) => console.log(`Damaged: ${reason}`)
-    //year: '1813',
-    //copies: 3
-};
+/******************************/
+// let myBook: Book = {
+//     id: 5,
+//     title: 'Pride and Prejudice',
+//     author: 'Jane Austen',
+//     available: true,
+//     category: Category.Fiction,
+//     pages: 251,
+//     markDamaged: (reason: string) => console.log(`Damaged: ${reason}`)
+//     //year: '1813',
+//     //copies: 3
+// };
 
-PrintBook(myBook);
-myBook.markDamaged('Missing Back Cover');
+// PrintBook(myBook);
+// myBook.markDamaged('Missing Back Cover');
+/******************************/
 
-let logDamage: DamageLogger;
-logDamage = (damage: string) => console.log(`Damage reported: ${damage}`);
-logDamage(`Coffee Stains`);
+/******************************/
+// let logDamage: DamageLogger;
+// logDamage = (damage: string) => console.log(`Damage reported: ${damage}`);
+// logDamage(`Coffee Stains`);
+/******************************/
+
+/******************************/
+let favoriteAuthor: Author = {
+    email: '',
+    name: '',
+    numBooksPublished: null
+}
+
+let favoriteLibrarian: Librarian = {
+    assistCustomer: null,
+    department: '',
+    email: '',
+    name: '',
+
+}
+/******************************/
+
+/******************************/
+/******************************/
+
+/******************************/
+/******************************/
+
+/******************************/
+/******************************/
+
+/******************************/
+/******************************/
