@@ -3,7 +3,7 @@
  */
 import {Category} from './enum';
 import {Book, DamageLogger, Author, Librarian} from './interfaces';
-import {UniversityLibrarian, ReferenceItem} from './classes';
+import {UniversityLibrarian, ReferenceItem, Encyclopedia} from './classes';
 // class Book {
 //     constructor(public id: number, public title: string, public author: string, public available: boolean, public categrory: Category) {
 //     }
@@ -199,14 +199,18 @@ function PrintBook(book: Book) {
 
 /******************************/
 // Creating and Using Classes
-let ref: ReferenceItem = new ReferenceItem('Another New Facts and Figures', 2016);
-ref.printItem();
-ref.publisher = 'Random Data Publishing';
-console.log(ref.publisher);
+// let ref: ReferenceItem = new ReferenceItem('Another New Facts and Figures', 2016);
+// ref.printItem();
+// ref.publisher = 'Random Data Publishing';
+// console.log(ref.publisher);
 /******************************/
 
 /******************************/
 // Extending Classes
+// If parent object constructor exporct parameters and child object does not have a constructor pass the parameters for the parent object to the child object
+//let refBook = new Encyclopedia('Worldpedia', 1900);
+let refBook = new Encyclopedia('Worldpedia', 1900, 10);
+refBook.printItem();
 /******************************/
 
 /******************************/
