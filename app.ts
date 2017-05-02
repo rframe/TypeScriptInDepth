@@ -4,20 +4,15 @@
 import {Category} from './enum';
 import {Book, DamageLogger, Author, Librarian} from './interfaces';
 import {UniversityLibrarian, ReferenceItem, Encyclopedia} from './classes';
-// class Book {
-//     constructor(public id: number, public title: string, public author: string, public available: boolean, public categrory: Category) {
-//     }
-// }
+//import * as util from './lib/utilityFunctions';
+import {CalculateLateFee as CalcFee, MaxBooksAllowed} from './lib/utilityFunctions';
+
 function GetAllBooks(): Array<Book> {
     let books = [
         {id: 1, title:'Ulysses', author: 'James Joyce', available: true, category:Category.Fiction},
         {id: 2, title:'A Farewell to Arms', author: 'Ernest Hemingway', available: false, category:Category.Fiction},
         {id: 3, title:'I Know Why the Caged Bird Sings', author: 'Maya Angelou', available: true, category:Category.Poetry},
-        {id: 4, title:'Moby Dick', author: 'Herman Melville', available: true, category:Category.Fiction},
-        // new Book(1, 'Ulysses', 'James Joyce', true, Category.Fiction),
-        // new Book(2, 'A Farewell to Arms', 'Ernest Hemingway', false, Category.Fiction),
-        // new Book(3, 'I Know Why the Caged Bird Sings', 'Maya Angelou', true, Category.Poetry),
-        // new Book(4, 'Moby Dick', 'Herman Melville', true, Category.Fiction)
+        {id: 4, title:'Moby Dick', author: 'Herman Melville', available: true, category:Category.Fiction}
     ];
     return books;
 }
