@@ -3,7 +3,7 @@
  */
 import {Category} from './enum';
 import {Book, DamageLogger, Author, Librarian} from './interfaces';
-import {UniversityLibrarian} from './classes';
+import {UniversityLibrarian, ReferenceItem, Encyclopedia} from './classes';
 // class Book {
 //     constructor(public id: number, public title: string, public author: string, public available: boolean, public categrory: Category) {
 //     }
@@ -192,19 +192,103 @@ function PrintBook(book: Book) {
 /******************************/
 
 /******************************/
-let favoriteLibrarian: Librarian = new UniversityLibrarian();
-favoriteLibrarian.name = 'Sharon';
-favoriteLibrarian.assistCustomer('Lynda');
+// let favoriteLibrarian: Librarian = new UniversityLibrarian();
+// favoriteLibrarian.name = 'Sharon';
+// favoriteLibrarian.assistCustomer('Lynda');
 /******************************/
 
 /******************************/
+// Creating and Using Classes
+// let ref: ReferenceItem = new ReferenceItem('Another New Facts and Figures', 2016);
+// ref.printItem();
+// ref.publisher = 'Random Data Publishing';
+// console.log(ref.publisher);
 /******************************/
 
 /******************************/
+// Extending Classes
+// If parent object constructor exporct parameters and child object does not have a constructor pass the parameters for the parent object to the child object
+//let refBook = new Encyclopedia('Worldpedia', 1900);
+// let refBook = new Encyclopedia('Worldpedia', 1900, 10);
+// refBook.printItem();
 /******************************/
 
 /******************************/
+// Creating Abstract Classes
+// let refBook: ReferenceItem = new Encyclopedia('Worldpedia', 1900, 10);
+// refBook.printCitation();
 /******************************/
 
 /******************************/
+// Using Class Expressions
+let Newspaper = class extends ReferenceItem {
+    printCitation(): void {
+        console.log(`Newspaper: ${this.title}`);
+    }
+}
+
+let myPaper = new Newspaper('The Gazette', 2016);
+myPaper.printCitation();
+
+class Novel extends class {title: string} {
+    mainCharacter: string;
+}
+
+let favoriteNovel = new Novel();
+favoriteNovel.mainCharacter = '';
+favoriteNovel.title = '';
+
+
+// class Novel extends class extends class {a: string} {title: string} {
+//     mainCharacter: string;
+// }
+
+// let favoriteNovel = new Novel();
+// favoriteNovel.mainCharacter = '';
+// favoriteNovel.title = '';
+// favoriteNovel.a = '';
+/******************************/
+
+/******************************/
+// Creating an App with Namespaces
+/******************************/
+
+/******************************/
+// Export and Import Basics
+/******************************/
+
+/******************************/
+// Importing an Entire Modul
+/******************************/
+
+/******************************/
+// Using Default Exports
+/******************************/
+
+/******************************/
+// Creating and Using Generic Functions
+/******************************/
+
+/******************************/
+// Creating and Using a Generic Class
+/******************************/
+
+/******************************/
+// Using Compiler Options
+/******************************/
+
+/******************************/
+// Managing a Project with tsconfig.json
+/******************************/
+
+/******************************/
+// Using Definitions from Definitely Typed
+/******************************/
+
+/******************************/
+// Installing Type Definitions with tsd
+/******************************/
+
+/******************************/
+// Installing Type Definitions with typings
 /******************************/
