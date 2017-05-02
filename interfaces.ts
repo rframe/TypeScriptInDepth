@@ -33,4 +33,4 @@ interface Librarian extends Person {
     assistCustomer: (customer: string) => void;
 }
 
-export { Book, DamageLogger, Author, Librarian };
+export { Book, DamageLogger as Logger, Author, Librarian };

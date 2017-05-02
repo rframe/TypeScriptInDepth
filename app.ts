@@ -2,7 +2,7 @@
  * Created by russell.frame on 4/21/2017.
  */
 import {Category} from './enum';
-import {Book, DamageLogger, Author, Librarian} from './interfaces';
+import {Book, Logger as DamageLogger, Author, Librarian} from './interfaces';
 import {UniversityLibrarian, ReferenceItem, Encyclopedia} from './classes';
 //import * as util from './lib/utilityFunctions';
 import {CalculateLateFee as CalcFee, MaxBooksAllowed} from './lib/utilityFunctions';
