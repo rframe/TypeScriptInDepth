@@ -1,0 +1,18 @@
+{
+  //rm -rf js/*
+  //tsc --help
+  //tsc --t ES5 --outDir js --m commonjs --sourceMap app.ts --watch
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true,
+    "watch": true,
+    "noImplicitAny": true,
+    "outDir": "js"
+  },
+  //"files": ["app.ts"]
+  "exclude": [
+    "node_modules",
+    "NamespaceDemo"
+  ]
+}

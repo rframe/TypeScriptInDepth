@@ -270,12 +270,12 @@ function PrintBook(book: Book) {
 // Creating and Using Generic Functions
 /******************************/
 /******************************/
-let inventory: Array<Book> = [
-    { id: 10, title: 'The C Programming Language', author: 'K & R', available: true, category: Category.Software },
-    { id: 11, title: 'Code Complete', author: 'Steve McConnell', available: true, category: Category.Software },
-    { id: 12, title: '8-bit Graphics with Cobol', author: 'A. B.', available: true, category: Category.Software },
-    { id: 13, title: 'Cool autoexec.bat Scripts!', author: 'C. D.', available: true, category: Category.Software }
-]
+// let inventory: Array<Book> = [
+//     { id: 10, title: 'The C Programming Language', author: 'K & R', available: true, category: Category.Software },
+//     { id: 11, title: 'Code Complete', author: 'Steve McConnell', available: true, category: Category.Software },
+//     { id: 12, title: '8-bit Graphics with Cobol', author: 'A. B.', available: true, category: Category.Software },
+//     { id: 13, title: 'Cool autoexec.bat Scripts!', author: 'C. D.', available: true, category: Category.Software }
+// ]
 
 // let purgeBooks: Array<Book> = Purge<Book>(inventory);
 // purgeBooks.forEach(book => console.log(book.title));
@@ -288,21 +288,21 @@ let inventory: Array<Book> = [
 // Creating and Using a Generic Class
 /******************************/
 /******************************/
-let bookShelf: Shelf<Book> = new Shelf<Book>();
-inventory.forEach(book => bookShelf.add(book));
+// let bookShelf: Shelf<Book> = new Shelf<Book>();
+// inventory.forEach(book => bookShelf.add(book));
 
-let firstBook: Book = bookShelf.getFirst();
+// let firstBook: Book = bookShelf.getFirst();
 
-let magazines: Array<Magazine> = [
-    {title: 'Programming Language Monthly', publisher: 'Code Mags'},
-    {title: 'Literary Fiction Quarterly', publisher: 'College Press'},
-    {title: 'Five Points', publisher: 'GSU'}
-]
+// let magazines: Array<Magazine> = [
+//     {title: 'Programming Language Monthly', publisher: 'Code Mags'},
+//     {title: 'Literary Fiction Quarterly', publisher: 'College Press'},
+//     {title: 'Five Points', publisher: 'GSU'}
+// ]
 
-let magazineShelf: Shelf<Magazine> = new Shelf<Magazine>();
-magazines.forEach(magazine => magazineShelf.add(magazine));
+// let magazineShelf: Shelf<Magazine> = new Shelf<Magazine>();
+// magazines.forEach(magazine => magazineShelf.add(magazine));
 
-let firstMagazine: Magazine = magazineShelf.getFirst();
+// let firstMagazine: Magazine = magazineShelf.getFirst();
 
 
 // let numberShelf: Shelf<number> = new Shelf<number>();
@@ -321,28 +321,43 @@ let firstMagazine: Magazine = magazineShelf.getFirst();
 // Applying Contraints to Generics
 /******************************/
 
-magazineShelf.printTitles();
-let softwareBook: Book = bookShelf.find('Code Complete');
-console.log(`${softwareBook.title} (${softwareBook.author})`);
+// magazineShelf.printTitles();
+// let softwareBook: Book = bookShelf.find('Code Complete');
+// console.log(`${softwareBook.title} (${softwareBook.author})`);
 /******************************/
 /******************************/
 
 /******************************/
 // Using Compiler Options
 /******************************/
+/******************************/
+
+/******************************/
 
 /******************************/
 // Managing a Project with tsconfig.json
+/******************************/
+/******************************/
+console.log('Change to this function');
 /******************************/
 
 /******************************/
 // Using Definitions from Definitely Typed
 /******************************/
+/******************************/
+
+/******************************/
 
 /******************************/
 // Installing Type Definitions with tsd
 /******************************/
+/******************************/
+
+/******************************/
 
 /******************************/
 // Installing Type Definitions with typings
+/******************************/
+/******************************/
+
 /******************************/
