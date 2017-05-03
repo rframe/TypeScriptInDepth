@@ -3,9 +3,12 @@
  */
 import {Category} from './enum';
 import {Book, Logger as DamageLogger, Author, Librarian} from './interfaces';
-import {UniversityLibrarian, ReferenceItem, Encyclopedia} from './classes';
+import {UniversityLibrarian, ReferenceItem} from './classes';
 //import * as util from './lib/utilityFunctions';
 import {CalculateLateFee as CalcFee, MaxBooksAllowed} from './lib/utilityFunctions';
+import Encyclopedia from './encyclopedia';
+
+let reference = new Encyclopedia('Fact Book', 2016, 1)
 
 function GetAllBooks(): Array<Book> {
     let books = [
