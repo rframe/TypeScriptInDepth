@@ -2,11 +2,12 @@
  * Created by russell.frame on 4/21/2017.
  */
 import {Category} from './enum';
-import {Book, Logger as DamageLogger, Author, Librarian} from './interfaces';
+import {Book, Logger as DamageLogger, Author, Librarian, Magazine} from './interfaces';
 import {UniversityLibrarian, ReferenceItem} from './classes';
 //import * as util from './lib/utilityFunctions';
 import {CalculateLateFee as CalcFee, MaxBooksAllowed, Purge} from './lib/utilityFunctions';
 import Encyclopedia from './encyclopedia';
+import Shelf from './shelf';
 
 let reference = new Encyclopedia('Fact Book', 2016, 1)
 
@@ -275,16 +276,42 @@ let inventory: Array<Book> = [
     { id: 13, title: 'Cool autoexec.bat Scripts!', author: 'C. D.', available: true, category: Category.Software }
 ]
 
-let purgeBooks: Array<Book> = Purge<Book>(inventory);
-purgeBooks.forEach(book => console.log(book.title));
+// let purgeBooks: Array<Book> = Purge<Book>(inventory);
+// purgeBooks.forEach(book => console.log(book.title));
 
-let purgeNums: Array<Number> = Purge<Number>([1,2,3,4]);
-purgeNums.forEach(number => console.log(number));
+// let purgeNums: Array<Number> = Purge<Number>([1,2,3,4]);
+// purgeNums.forEach(number => console.log(number));
 
 /******************************/
 // Creating and Using a Generic Class
 /******************************/
+let bookShelf: Shelf<Book> = new Shelf<Book>();
+inventory.forEach(book => bookShelf.add(book));
 
+let firstBook: Book = bookShelf.getFirst();
+
+let magazines: Array<Magazine> = [
+    {title: 'Programming Language Monthly', publisher: 'Code Mags'},
+    {title: 'Literary Fiction Quarterly', publisher: 'College Press'},
+    {title: 'Five Points', publisher: 'GSU'}
+]
+
+let magazineShelf: Shelf<Magazine> = new Shelf<Magazine>();
+magazines.forEach(magazine => magazineShelf.add(magazine));
+
+let firstMagazine: Magazine = magazineShelf.getFirst();
+
+
+let numberShelf: Shelf<number> = new Shelf<number>();
+[5, 10, 15].forEach(magazine => numberShelf.add(magazine));
+
+let firstNumber: number = numberShelf.getFirst();
+
+console.log(firstBook.title);
+
+console.log(firstMagazine.title);
+
+console.log(firstNumber);
 /******************************/
 // Using Compiler Options
 /******************************/
