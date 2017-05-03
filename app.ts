@@ -5,7 +5,7 @@ import {Category} from './enum';
 import {Book, Logger as DamageLogger, Author, Librarian} from './interfaces';
 import {UniversityLibrarian, ReferenceItem} from './classes';
 //import * as util from './lib/utilityFunctions';
-import {CalculateLateFee as CalcFee, MaxBooksAllowed} from './lib/utilityFunctions';
+import {CalculateLateFee as CalcFee, MaxBooksAllowed, Purge} from './lib/utilityFunctions';
 import Encyclopedia from './encyclopedia';
 
 let reference = new Encyclopedia('Fact Book', 2016, 1)
@@ -268,6 +268,18 @@ function PrintBook(book: Book) {
 /******************************/
 // Creating and Using Generic Functions
 /******************************/
+let inventory: Array<Book> = [
+    { id: 10, title: 'The C Programming Language', author: 'K & R', available: true, category: Category.Software },
+    { id: 11, title: 'Code Complete', author: 'Steve McConnell', available: true, category: Category.Software },
+    { id: 12, title: '8-bit Graphics with Cobol', author: 'A. B.', available: true, category: Category.Software },
+    { id: 13, title: 'Cool autoexec.bat Scripts!', author: 'C. D.', available: true, category: Category.Software }
+]
+
+let purgeBooks: Array<Book> = Purge<Book>(inventory);
+purgeBooks.forEach(book => console.log(book.title));
+
+let purgeNums: Array<Number> = Purge<Number>([1,2,3,4]);
+purgeNums.forEach(number => console.log(number));
 
 /******************************/
 // Creating and Using a Generic Class
