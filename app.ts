@@ -269,6 +269,7 @@ function PrintBook(book: Book) {
 /******************************/
 // Creating and Using Generic Functions
 /******************************/
+/******************************/
 let inventory: Array<Book> = [
     { id: 10, title: 'The C Programming Language', author: 'K & R', available: true, category: Category.Software },
     { id: 11, title: 'Code Complete', author: 'Steve McConnell', available: true, category: Category.Software },
@@ -281,9 +282,11 @@ let inventory: Array<Book> = [
 
 // let purgeNums: Array<Number> = Purge<Number>([1,2,3,4]);
 // purgeNums.forEach(number => console.log(number));
+/******************************/
 
 /******************************/
 // Creating and Using a Generic Class
+/******************************/
 /******************************/
 let bookShelf: Shelf<Book> = new Shelf<Book>();
 inventory.forEach(book => bookShelf.add(book));
@@ -302,16 +305,28 @@ magazines.forEach(magazine => magazineShelf.add(magazine));
 let firstMagazine: Magazine = magazineShelf.getFirst();
 
 
-let numberShelf: Shelf<number> = new Shelf<number>();
-[5, 10, 15].forEach(magazine => numberShelf.add(magazine));
+// let numberShelf: Shelf<number> = new Shelf<number>();
+// [5, 10, 15].forEach(magazine => numberShelf.add(magazine));
 
-let firstNumber: number = numberShelf.getFirst();
+// let firstNumber: number = numberShelf.getFirst();
 
-console.log(firstBook.title);
+//console.log(firstBook.title);
 
-console.log(firstMagazine.title);
+//console.log(firstMagazine.title);
 
-console.log(firstNumber);
+// console.log(firstNumber);
+/******************************/
+
+/******************************/
+// Applying Contraints to Generics
+/******************************/
+
+magazineShelf.printTitles();
+let softwareBook: Book = bookShelf.find('Code Complete');
+console.log(`${softwareBook.title} (${softwareBook.author})`);
+/******************************/
+/******************************/
+
 /******************************/
 // Using Compiler Options
 /******************************/
