@@ -2,22 +2,20 @@
  * Created by russell.frame on 4/21/2017.
  */
 import {Category} from './enum';
-import {Book, DamageLogger, Author, Librarian} from './interfaces';
-import {UniversityLibrarian, ReferenceItem, Encyclopedia} from './classes';
-// class Book {
-//     constructor(public id: number, public title: string, public author: string, public available: boolean, public categrory: Category) {
-//     }
-// }
+import {Book, Logger as DamageLogger, Author, Librarian} from './interfaces';
+import {UniversityLibrarian, ReferenceItem} from './classes';
+//import * as util from './lib/utilityFunctions';
+import {CalculateLateFee as CalcFee, MaxBooksAllowed} from './lib/utilityFunctions';
+import Encyclopedia from './encyclopedia';
+
+let reference = new Encyclopedia('Fact Book', 2016, 1)
+
 function GetAllBooks(): Array<Book> {
     let books = [
         {id: 1, title:'Ulysses', author: 'James Joyce', available: true, category:Category.Fiction},
         {id: 2, title:'A Farewell to Arms', author: 'Ernest Hemingway', available: false, category:Category.Fiction},
         {id: 3, title:'I Know Why the Caged Bird Sings', author: 'Maya Angelou', available: true, category:Category.Poetry},
-        {id: 4, title:'Moby Dick', author: 'Herman Melville', available: true, category:Category.Fiction},
-        // new Book(1, 'Ulysses', 'James Joyce', true, Category.Fiction),
-        // new Book(2, 'A Farewell to Arms', 'Ernest Hemingway', false, Category.Fiction),
-        // new Book(3, 'I Know Why the Caged Bird Sings', 'Maya Angelou', true, Category.Poetry),
-        // new Book(4, 'Moby Dick', 'Herman Melville', true, Category.Fiction)
+        {id: 4, title:'Moby Dick', author: 'Herman Melville', available: true, category:Category.Fiction}
     ];
     return books;
 }
@@ -221,22 +219,22 @@ function PrintBook(book: Book) {
 
 /******************************/
 // Using Class Expressions
-let Newspaper = class extends ReferenceItem {
-    printCitation(): void {
-        console.log(`Newspaper: ${this.title}`);
-    }
-}
+// let Newspaper = class extends ReferenceItem {
+//     printCitation(): void {
+//         console.log(`Newspaper: ${this.title}`);
+//     }
+// }
 
-let myPaper = new Newspaper('The Gazette', 2016);
-myPaper.printCitation();
+// let myPaper = new Newspaper('The Gazette', 2016);
+// myPaper.printCitation();
 
-class Novel extends class {title: string} {
-    mainCharacter: string;
-}
+// class Novel extends class {title: string} {
+//     mainCharacter: string;
+// }
 
-let favoriteNovel = new Novel();
-favoriteNovel.mainCharacter = '';
-favoriteNovel.title = '';
+// let favoriteNovel = new Novel();
+// favoriteNovel.mainCharacter = '';
+// favoriteNovel.title = '';
 
 
 // class Novel extends class extends class {a: string} {title: string} {
@@ -249,6 +247,8 @@ favoriteNovel.title = '';
 // favoriteNovel.a = '';
 /******************************/
 
+
+/****Modules and Namespaces****/
 /******************************/
 // Creating an App with Namespaces
 /******************************/
