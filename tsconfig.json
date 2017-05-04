@@ -10,9 +10,9 @@
     "noImplicitAny": true,
     "outDir": "js"
   },
-  //"files": ["app.ts"]
-  "exclude": [
-    "node_modules",
-    "NamespaceDemo"
-  ]
+  "files": ["app.ts"]
+//  "exclude": [
+//    "node_modules",
+//    "NamespaceDemo"
+//  ]
 }

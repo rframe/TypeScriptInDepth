@@ -1,6 +1,8 @@
 /**
  * Created by russell.frame on 4/21/2017.
  */
+
+
 import {Category} from './enum';
 import {Book, Logger as DamageLogger, Author, Librarian, Magazine} from './interfaces';
 import {UniversityLibrarian, ReferenceItem} from './classes';
@@ -8,6 +10,13 @@ import {UniversityLibrarian, ReferenceItem} from './classes';
 import {CalculateLateFee as CalcFee, MaxBooksAllowed, Purge} from './lib/utilityFunctions';
 import Encyclopedia from './encyclopedia';
 import Shelf from './shelf';
+
+import * as _ from "lodash";
+
+
+let snakeCaseTitle = _.snakeCase('For Whom the Bell Tolls');
+console.log(snakeCaseTitle);
+
 
 let reference = new Encyclopedia('Fact Book', 2016, 1)
 
